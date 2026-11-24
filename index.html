@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kiara's picks: soft-tone fits that look 10x the price.">
+<title>Kiara's Picks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Jost:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow link-in-bio column; every product is a boutique hang-tag; sections are anchor targets for the DM buttons */
+:root {
+  --bg: #F4EEE6;          /* Kiara kit cream */
+  --card: #FFFCF7;        /* Kiara kit pill */
+  --ink: #2B2421;
+  --soft: #786860;
+  --gold: #9A7639;        /* kit gold, deepened for text contrast */
+  --rose: #7A2E3A;        /* burgundy, echoes her hair ends */
+  --blush: #EBD3CC;
+  --line: #E3D8CB;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Jost", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E1917; --card: #2A2320; --ink: #F4EEE6; --soft: #BBAA9E;
+    --gold: #D4AF6E; --rose: #E2A3AD; --blush: #4A2E31; --line: #3D3330;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E1917; --card: #2A2320; --ink: #F4EEE6; --soft: #BBAA9E;
+  --gold: #D4AF6E; --rose: #E2A3AD; --blush: #4A2E31; --line: #3D3330;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 520px; margin: 0 auto; padding-block: 40px 56px; display: flex; flex-direction: column; gap: 40px; }
+
+header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); padding: 3px; background: var(--card); }
+.monogram {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid var(--gold); color: var(--gold);
+  font-family: var(--display); font-style: italic; font-size: 30px;
+}
+h1 { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 40px; line-height: 1.05; margin: 0; text-wrap: balance; }
+.tagline { margin: 0; color: var(--soft); font-size: 15px; }
+.disclosure-top { margin: 4px 0 0; font-size: 12px; color: var(--soft); letter-spacing: .02em; }
+
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+nav a {
+  font-size: 13px; letter-spacing: .06em; text-transform: lowercase;
+  text-decoration: none; color: var(--ink);
+  padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+}
+nav a:hover, nav a:focus-visible { border-color: var(--gold); color: var(--gold); outline: none; }
+
+section { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 20px; }
+.sec-head { display: flex; flex-direction: column; gap: 2px; }
+.eyebrow { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+h2 { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.sec-note { margin: 2px 0 0; color: var(--soft); font-size: 14px; }
+
+.persona { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--rose); margin: 8px 0 -4px; }
+
+/* hang-tag product row */
+.tag {
+  position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px 14px 14px 4px;
+  padding: 14px 16px 14px 34px; text-decoration: none; color: var(--ink);
+  transition: border-color .2s, transform .2s;
+}
+.tag::before { /* punched hole */
+  content: ""; position: absolute; left: 12px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px;
+  border-radius: 50%; background: var(--bg); border: 1px solid var(--line);
+}
+.tag:hover, .tag:focus-visible { border-color: var(--gold); outline: none; transform: translateX(2px); }
+@media (prefers-reduced-motion: reduce) { .tag { transition: none; } .tag:hover { transform: none; } }
+.tag-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.tag-name { font-weight: 500; font-size: 15px; }
+.tag-style { font-size: 13px; color: var(--soft); }
+.tag-cta { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+
+.brand {
+  background: var(--blush); border-radius: 18px; padding: 22px 20px; display: flex; flex-direction: column; gap: 12px; text-align: center;
+}
+.brand p { margin: 0; }
+.brand .btn {
+  align-self: center; text-decoration: none; color: var(--bg); background: var(--rose);
+  padding: 10px 22px; border-radius: 999px; font-size: 14px; letter-spacing: .04em;
+}
+.brand .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+footer { text-align: center; color: var(--soft); font-size: 12px; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 22px; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <img class="avatar" src="kiara_avatar_320.jpg" width="96" height="96" alt="Kiara">
+    <h1>Kiara's picks</h1>
+    <p class="tagline">soft-tone fits that look 10x the price 🤍</p>
+    <p class="disclosure-top">As an Amazon Associate I earn from qualifying purchases.</p>
+  </header>
+
+  <nav aria-label="Jump to a section">
+    <a href="#gifts">gifts</a>
+    <a href="#neutrals">the look</a>
+    <a href="#party">party</a>
+    <a href="#lounge">cozy sets</a>
+    <a href="#winter">winter</a>
+    <a href="#brand">my brand</a>
+  </nav>
+
+  <section id="gifts">
+    <div class="sec-head">
+      <span class="eyebrow">Gift for every girl</span>
+      <h2>Styled for her, so you don't have to guess</h2>
+    </div>
+    <p class="persona">the little sister who steals your sweaters</p>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-lounge-set" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Foldover flare lounge set</span><span class="tag-style">styled in blush with a claw clip</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-zip-hoodie" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Cropped zip-up hoodie</span><span class="tag-style">over the lounge set, oatmeal or cream</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <p class="persona">the bestie who cancels plans</p>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-bow-flats" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Bow lace-up ballet flats</span><span class="tag-style">the bow goes with everything</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-satin-slip" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Cowl-neck satin slip dress</span><span class="tag-style">for the plans she does keep</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <p class="persona">the mom who already has everything</p>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-ribbed-4pack" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Ribbed long-sleeve 4-pack</span><span class="tag-style">soft basics in neutral tones</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-suede-clogs" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Suede platform clogs</span><span class="tag-style">warm camel, easy to slip on</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+  </section>
+
+  <section id="neutrals">
+    <div class="sec-head">
+      <span class="eyebrow">The look</span>
+      <h2>Elevated neutrals</h2>
+      <p class="sec-note">cream base, one blush accent, gold everything</p>
+    </div>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-wide-leg-jeans" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">High-waist wide-leg jeans</span><span class="tag-style">light wash, raw hem</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-bow-flats" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Bow lace-up ballet flats</span><span class="tag-style">styled in blush</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-suede-clogs" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Suede platform clogs</span><span class="tag-style">the weekend version of the look</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+  </section>
+
+  <section id="party">
+    <div class="sec-head">
+      <span class="eyebrow">Holiday party</span>
+      <h2>Party looks</h2>
+    </div>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-knit-mini" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Cape-sleeve rib-knit mini</span><span class="tag-style">burgundy, with a gold pendant</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-satin-slip" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Cowl-neck satin slip dress</span><span class="tag-style">apricot, cream cardigan over the shoulders</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-sequin-skirt" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Sparkly sequin mini skirt</span><span class="tag-style">New Year's Eve, with a cream knit</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-kitten-heels" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Leopard slingback kitten heels</span><span class="tag-style">goes with all three</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+  </section>
+
+  <section id="lounge">
+    <div class="sec-head">
+      <span class="eyebrow">Cozy sets</span>
+      <h2>Lounge, but make it cute</h2>
+    </div>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-lounge-set" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Foldover flare lounge set</span><span class="tag-style">blush, sage or oatmeal</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-zip-hoodie" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Cropped zip-up hoodie</span><span class="tag-style">layers over any set</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+  </section>
+
+  <section id="winter">
+    <div class="sec-head">
+      <span class="eyebrow">Winter layers</span>
+      <h2>What every look is built on</h2>
+    </div>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-puffer" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Long hooded puffer coat</span><span class="tag-style">cream or camel</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-leather-pants" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Faux-leather wide-leg pants</span><span class="tag-style">chocolate brown, with a cream knit</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+    <a class="tag" href="https://urlgeni.us/amazon/kiara-ribbed-4pack" target="_blank" rel="noopener sponsored">
+      <span class="tag-text"><span class="tag-name">Ribbed long-sleeve 4-pack</span><span class="tag-style">the base layer under everything</span></span>
+      <span class="tag-cta">Shop</span>
+    </a>
+  </section>
+
+  <section id="brand" class="brand">
+    <span class="eyebrow">My brand</span>
+    <h2>Soft Hues Collective</h2>
+    <p>My own soft-tone tees, crewnecks and mugs with little gold details 🎀</p>
+    <a class="btn" href="https://www.tiktok.com/@softhuescollective" target="_blank" rel="noopener">See my brand</a>
+  </section>
+
+  <footer>
+    <p>As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>Prices and availability are set by Amazon and can change.</p>
+  </footer>
+</div>
+
+<script>
+  function goToHash() {
+    var id = (location.hash || "").slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ block: "start" });
+  }
+  window.addEventListener("hashchange", goToHash);
+  window.addEventListener("load", goToHash);
+</script>
+</body>
+</html>
